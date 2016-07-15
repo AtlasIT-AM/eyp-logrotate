@@ -9,8 +9,9 @@ class logrotate::params {
         {
       case $::operatingsystemrelease
       {
-        /^[67].*$/:
+        /^[6-7].*$/:
         {
+          $su_default=undef
         }
         default: { fail("Unsupported RHEL/CentOS version! - ${::operatingsystemrelease}")  }
       }
