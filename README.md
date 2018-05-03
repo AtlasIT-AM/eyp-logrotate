@@ -115,6 +115,7 @@ This is going to generate the following logrotate configuration files:
 }
 ```
 #### /etc/logrotate.d/puppet-managed/bitban1
+
 ```
 /deploy/VAR/local/elespanol/www.elespanol.com/BB3Logs/*log* {
   su bbt-deploy bbt-deploy
@@ -135,8 +136,6 @@ This is going to generate the following logrotate configuration files:
   rotate 3
 }
 ```
-
-
 
 ## Reference
 
@@ -176,6 +175,7 @@ This is going to generate the following logrotate configuration files:
 * **create_owner**: file creation owner, if create_mode and/or create_group are defined, defaults to root (default: undef)
 * **create_group**: file creation group, if create_mode and/or create_group are defined, defaults to root (default: undef)
 * **custom_file**: create log file rotation on a custom file path (default: undef)
+* **sharedscripts**: is set to true, the postrotate script will only be run once (after the old logs have been compressed), not once for each log which is rotated (default: false)
 
 ## Limitations
 
